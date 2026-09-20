@@ -22,9 +22,6 @@ machine and left it with no keyboard or mouse for nearly two hours.
 - **usb-port-quiesce.sh** — switches off a hub port that cannot enumerate.
 - **install.sh** — installs, or removes, the lot; `/etc/usb-rescue.conf` holds
   the controller, hubs, optional dead port and page port.
-
-### Unreleased
-
-- `DIAGNOSIS.md` rewritten as a case study for a public audience: the machine's
-  name, LAN addresses and SSH arrangements are out, the hardware, failure and
-  reasoning stay in.
+- **DIAGNOSIS.md** — the failure written up as a case study: three controllers
+  with their PCI paths, the hub topology, the kernel messages with timestamps,
+  what the evidence rules out, and the ranked next steps.
