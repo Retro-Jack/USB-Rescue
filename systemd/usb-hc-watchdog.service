@@ -1,0 +1,12 @@
+[Unit]
+Description=Rebind the USB controller when the kernel declares it dead
+Documentation=file:/usr/local/sbin/usb-hc-watchdog.sh
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/local/sbin/usb-hc-watchdog.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

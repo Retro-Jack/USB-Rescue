@@ -1,0 +1,11 @@
+[Unit]
+Description=USB rescue page (local network only)
+Documentation=file:%h/bin/usb-rescue-web.py
+
+[Service]
+ExecStart=%h/bin/usb-rescue-web.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

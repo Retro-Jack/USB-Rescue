@@ -1,0 +1,12 @@
+[Unit]
+Description=Disable the dead port on the desk hub
+Documentation=file:/usr/local/sbin/usb-port-quiesce.sh
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/usb-port-quiesce.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

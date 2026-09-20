@@ -1,0 +1,6 @@
+# Let the rescue page reset USB while the keyboard is dead, so it cannot be
+# asked for a password. Exactly these three command lines, nothing else.
+# Install as /etc/sudoers.d/usb-rescue, mode 440, after checking it with:
+#     visudo -cf examples/usb-rescue.sudoers
+# Replace YOURUSER with the account that runs the page.
+YOURUSER ALL=(root) NOPASSWD: /usr/local/sbin/usb-reset-chain.sh hubs, /usr/local/sbin/usb-reset-chain.sh controller, /usr/local/sbin/usb-reset-chain.sh state

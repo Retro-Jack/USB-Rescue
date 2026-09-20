@@ -1,0 +1,18 @@
+# usb-rescue configuration — copy to /etc/usb-rescue.conf and edit.
+#
+# Find these with:  lsusb -t     (which bus your keyboard is on)
+#                   readlink -f /sys/bus/usb/devices/usb3     (its PCI address)
+
+# The USB controller to rebind when it stops responding, as a PCI address.
+CONTROLLER="0000:07:00.3"
+
+# Hubs to reset before resorting to the controller, as USB port paths.
+# Leave empty if the devices plug straight into the machine.
+HUBS="3-6 3-6.5"
+
+# Optional: a hub port that cannot enumerate and should be switched off, as a
+# sysfs path. Leave empty for none.
+QUIESCE_PORT="/sys/bus/usb/devices/3-6.5:1.0/3-6.5-port2"
+
+# Port for the rescue page. Firewall it to your own network.
+WEB_PORT=8777
