@@ -1,4 +1,4 @@
-# usb-rescue
+# USB-Rescue
 
 Tools for a PC whose USB controller dies while the machine keeps running: the
 keyboard and mouse stop responding, the ports still have power, and the only
@@ -37,7 +37,7 @@ is specific to that: the controller and hubs are configuration, not code.
 
 ```sh
 git clone https://github.com/Retro-Jack/USB-Rescue.git
-cd usb-rescue
+cd USB-Rescue
 sudo ./install.sh              # everything
 sudo ./install.sh watchdog     # just the watchdog
 sudo ./install.sh --uninstall
