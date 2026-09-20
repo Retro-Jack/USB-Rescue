@@ -36,7 +36,7 @@ is specific to that: the controller and hubs are configuration, not code.
 ## Install
 
 ```sh
-git clone https://github.com/Retro-Jack/usb-rescue.git
+git clone https://github.com/Retro-Jack/USB-Rescue.git
 cd usb-rescue
 sudo ./install.sh              # everything
 sudo ./install.sh watchdog     # just the watchdog
