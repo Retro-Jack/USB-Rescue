@@ -1,16 +1,16 @@
-# The machine, and what actually happened
+# A case study: the controller that died
 
-A record of this specific case, so none of it has to be worked out twice.
-This repository is private; the values below are real.
+One real failure, written up so the symptoms are searchable and the reasoning
+is reusable. The PCI addresses and port paths below are from the machine it
+happened on; yours will differ, which is the point of `/etc/usb-rescue.conf`.
 
 ## The machine
 
 | | |
 |---|---|
-| Host | `thebeast`, CachyOS, kernel 7.2.x |
+| OS | CachyOS (Arch), kernel 7.2.x |
 | Board | Gigabyte **X570S GAMING X**, BIOS **F5** (06/08/2023) |
 | Kernel cmdline | includes `nowatchdog` |
-| LAN | 192.168.0.107, router 192.168.0.1 |
 
 Three USB controllers, all AMD Matisse `1022:149c`:
 
@@ -93,12 +93,12 @@ reset. Only the controller rebind could work — and it did, in about ten second
 4. If it persists on the CPU controller too, a **powered** hub — or no hub at
    all — is the next variable to remove.
 
-## Related bits on this machine
+## Two practical notes
 
-- **SSH**, LAN-only, enabled 18/09: `/etc/ssh/sshd_config.d/10-local-only.conf`
-  (AllowUsers jack, no root login), ufw allows 22/tcp from 192.168.0.0/24.
-  Password auth is on; there are no authorised keys.
-- **The rescue page** runs as a user service with lingering enabled, so it is up
-  from boot, before anyone logs in — which matters if a lockup ever leaves you
-  at the login screen with a dead keyboard.
-- Reports land in `/mnt/misc/lockup-reports/`.
+- **Run the rescue page as a user service with lingering enabled**
+  (`loginctl enable-linger <user>`), so it is up from boot, before anyone logs
+  in. That matters if a failure ever leaves you at the login screen with a dead
+  keyboard.
+- **Remote access is worth arranging before you need it.** Something as simple
+  as SSH restricted to your own network turns "hold the power button" into a
+  diagnosis. Keep it firewalled to the local subnet.

@@ -6,7 +6,7 @@
 #     usb-reset-chain.sh controller   unbind/rebind the whole USB controller
 #     usb-reset-chain.sh state        print what is on that bus (no changes)
 #
-# Installed at /usr/local/sbin/ and allowed for user jack, without a password,
+# Installed at /usr/local/sbin/ and allowed for the page's user, without a password,
 # by /etc/sudoers.d/usb-rescue — those two exact command lines and nothing
 # else, so the web page can call it while the keyboard is dead.
 #
